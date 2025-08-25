@@ -95,8 +95,11 @@ public class ClientReadPlatformServiceImpl implements ClientReadPlatformService 
             dataValidationErrors.add(error);
             throw new PlatformApiDataValidationException(dataValidationErrors);
         }
-
-        final String userOfficeHierarchy = this.context.officeHierarchy();
+         
+		//Yves FOPA change on 26 aug 2025 
+        //final String userOfficeHierarchy = this.context.officeHierarchy();
+		final String userOfficeHierarchy = ".";
+		//End of change
         final String underHierarchySearchString = userOfficeHierarchy + "%";
         final String appUserID = String.valueOf(context.authenticatedUser().getId());
 
